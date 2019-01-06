@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>event事件</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+<div id="app">
+    {{arr}} <hr>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm=new Vue({
+        el:'#app',
+        data:{  //data 中的数据会被vm代理
+            arr:[1,2,3,4,5]
+        }
+    })
+</script>
+</body>
+</html>

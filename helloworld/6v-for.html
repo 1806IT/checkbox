@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰7</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+<div id="app">
+    要循环谁就在谁身上加v-for属性 <hr>
+    <ul>
+        <li v-for="food of foods ">{{food.name}}</li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="value in foods" v-text="value.name"></li>
+    </ul>
+    <hr>
+    默认是value of数组（value,index）of/in 数组，最好用in
+    <ul>
+        <li v-for="(value,index) in foods" v-text="value.name+'----'+(index+1)"></li>
+    </ul>
+    <hr>多维数组
+    <br>
+    <ul>
+        <li v-for="(food,index) in foods" v-text="(index+1)+'.'+food.name">
+            <ul>
+                <li v-for="(foodColor,foodIndex) in food.color" v-text="(index+1)+'.'+(foodIndex+1)+' '+foodColor"></li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(food ,index) in foods">
+            {{index+1}}.{{food.name}}
+            <ul>
+                <li v-for="(foodColor,foodIndex) in food.color">
+                    {{index+1}}.{{foodIndex+1}}{{foodColor}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div v-for="a in 'hello'">{{a}}</div>
+    <div v-for="a in 4">{{a}}</div>
+    <div v-for="(value,key,index) in obj" v-text="index+':'+key+'---'+value"></div>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm=new Vue({
+        el:'#app',
+        data:{  //data 中的数据会被vm代理
+            foods:[{name:'banana',color:['green','yellow']},
+                {name:'apple',color:['red','pink','green']},
+                {name:'egg',color:['white','yellow']}],
+            obj:{name:'luo',age:31,sex:'woman'}
+        }
+    })
+
+</script>
+</body>
+</html>

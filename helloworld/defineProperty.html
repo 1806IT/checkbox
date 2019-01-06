@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰7</title>
+</head>
+<body>
+<input type="text">
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let obj={}
+    let temp={}
+    Object.defineProperty(obj,'name',{
+        configurable:true,//是否可删除
+        writable:true,//是否可写，是否可重新赋值
+        enumerable:true,//是否可枚举,false，不能被遍历
+        value:111,
+    get(){//取obj 的name 属性会触发
+        return temp['name']
+    },
+    set(val){//给obj的name属性赋值会触发
+        temp['name']=val
+        input.value=val
+    }
+    })
+    input.value=obj.name
+    input.addEventListener('input',function(){
+        obj.name=this.value
+    })
+
+</script>
+
+</body>
+</html>

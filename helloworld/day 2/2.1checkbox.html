@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>axios</title>
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="/Users/apple/Desktop/jirengu/vue-Everest/node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <!--bootstrap栅格化布局 默认12列 （一些框架可能是24列 ）-->
+    <!--常见样式  基本样式+增强样式-->
+    <table>
+
+    </table>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="promise.js"></script>
+<script>
+    let vm=new Vue({
+        el:'#app',
+        //专门用来发送ajax的方法
+        created(){//数据被初始化后会调用，this指向vue实例，是钩子函数（页面加载完，实例对象创建的时候就有的函数叫钩子函数）
+            this.getData()
+        },
+        methods:{
+            getData(){//初始化方法
+
+                //console.log(this.products)//可以直接调用data中的数据
+                axios.get('./carts.json').then(res=>{//回调函数中的this是window，所以这里axis中用箭头函数，将this指向到这个实例中
+                    console.log(res.data)
+                    this.products=res.data
+                },(err)=>{
+                    console.log(err)
+                })
+            }
+        },
+        data:{
+            products:[]
+        },
+
+    })
+</script>
+</body>
+</html>

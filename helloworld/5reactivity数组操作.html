@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰7</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+<div id="app">
+    {{arr}} <hr>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm=new Vue({
+        el:'#app',
+        data:{  //data 中的数据会被vm代理
+            arr:[1,2,3,4,5]
+        }
+    })
+    // 去改变数组中的某一项是监控不到的，，也不能使用改变数组的长度的方法，监控不到数据的错误写法,被注释的都错了
+    // vm.arr[0]=100
+    // vm.arr.length-=2
+
+    // 正确做法使用pop push shift unshift sort reserve splice
+    vm.arr.reverse()
+    vm.arr =vm.arr.map(item=>item*3)//map filter因为不会改变原数组，所以也监控不到，要改变就赋值给新数组
+</script>
+</body>
+</html>
