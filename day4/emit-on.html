@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>emit</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+<!--父绑定一些事件，儿子触发事件，将参数传递过去,单向数据流，父亲刷新数据，儿子就刷新-->
+    父亲：{{money}}
+    <son :m="money" @child-msg="things"></son>
+</div>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let app1= new Vue({
+        el:'#app',
+        data:{
+            money:400
+        },
+        methods:{
+            things(val){
+                this.money=val
+                console.log(val)
+            }
+        },
+        components:{
+            'son':{
+                props:['m'],
+                template:'<div>儿子: {{m}}<button @click="givemoney()">再给点</button></div>',
+                methods:{
+                    givemoney(){
+                        this.$emit('child-msg',800)
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

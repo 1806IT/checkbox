@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件分类</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+<!--分类 页面级组件：
+    1：1个页面是一个组件
+    2：将可复用的部分抽离出来 基础组件
+    一个自定义标签vue就会把他看成一个组件
+    组件是相互独立的，不能直接跨作用域，实例也是一个组件，组件中拥有声明周期函数
+    若组件共用了数据，会导致同时更新
+    组件理论上可以无限嵌套
+    -->
+    <my-component></my-component>
+</div>
+<div id="app2">
+    目标结构
+    <!--<div>-->
+        <!--parent-->
+        <!--<div>son-->
+            <!--<div>-->
+                <!--grandson-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+</div>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component(
+        'my-component',{//一个对象可以看成一个组件
+           template:'<div>全局组件</div>'
+        }
+    )
+
+
+    let app1= new Vue({
+        el:'#app',
+        data:{
+            msg:'hello',
+            arr:[1,2,3],
+            arr2:[1,2,3]
+        },
+        mounted(){
+
+        }
+    })
+    let parent={template:'<div>parent</div>'}
+    let son={template:'<div>son</div>'}
+    let grandson={template:'<div>grandson</div>'}
+    let app2=new Vue({
+        el:'#app2',
+        data:{
+
+        }
+    })
+</script>
+</body>
+</html>
