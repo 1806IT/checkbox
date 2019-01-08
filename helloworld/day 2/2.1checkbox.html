@@ -4,19 +4,61 @@
     <meta charset="UTF-8">
     <title>axios</title>
     <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="/Users/apple/Desktop/jirengu/vue-Everest/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
 <div id="app">
     <!--bootstrap栅格化布局 默认12列 （一些框架可能是24列 ）-->
     <!--常见样式  基本样式+增强样式-->
-    <table>
+    <div class="container">
+        <!--每一行又会拥有12列-->
+        <div class="row">
+            <table class="table table-hover table-bordered">
+                <caption class="h2 text-center text-warning">购物车</caption>
+                <tr>
+                    <th>全选 <input type="checkbox" v-model="this.checkAll" ></th><!--@change="change"-->
+                    <td>商品</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>小计</td>
+                    <td>操作</td>
+                </tr>
+                <tr v-for="(product,index) in products">
+                    <td class="text-center">
+                        <input type="checkbox"
+                               v-model="product.isSelected"
+                        >
+                               <!--@change="checkOne"-->
 
-    </table>
+                    </td>
+                    <td><img :src="product.productCover"
+                             :title="product.productName"
+
+                    >
+                        {{product.productInfo}}
+                    </td>
+
+                    <td>
+                        <!--过滤器，原数组不变情况下，只改变显示效果 管道符-->
+                        {{product.productPrice|toFixed(2)}}
+                    </td>
+                    <!--.number修饰符，输入类型为数字类型，.lazy当输入框失去焦点是更新数据,min保证输入值不小于1-->
+                    <td><input type="number" v-model.number.lazy="product.porductCount" min="1"></td>
+                    <td>{{product.porductCount*product.productPrice|toFixed(2)}}</td>
+                    <td><button class="btn btn-danger" @click="remove(product)">删除</button></td>
+                </tr>
+                <tr>
+                    <!--<td colspan="6">总价格:{{sum()|toFixed(2)}}</td>-->
+                    <td colspan="6">总价格:{{this.sum}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
 </div>
 <script src="../../node_modules/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
-<script src="promise.js"></script>
+
 <script>
     let vm=new Vue({
         el:'#app',
@@ -24,21 +66,80 @@
         created(){//数据被初始化后会调用，this指向vue实例，是钩子函数（页面加载完，实例对象创建的时候就有的函数叫钩子函数）
             this.getData()
         },
+        //当给全选赋值时，要影响其他人的变化，当页面刷新时，获取全选值，是根据下面的checkbox计算出来的结果给全选赋值
+        //计算属性，将所有要计算的值放入其中
+        computed:{
+            checkAll:{//get和set中的this指向window//是计算出来的放置计算属性
+                // 当products变化时会重新计算
+                get(){//默认v-model会获取checkAll的值，所以会调用get方法
+                    return this.products.every(p=>p.isSelected)
+                }
+                },
+                set(val){//当给checkbox赋值时
+                    this.products.forEach(p=>p.isSelected=val)
+                },
+/*            sum:{
+                get(){
+                    return this.products.reduce((pre,next)=>{
+                            if(!next.isSelected) return pre  //如果当前没被选中，就不进行累加
+                            return pre+next.productPrice*next.porductCount}
+                        ,0)
+                }
+            }*/
+            sum(){//若计算属性写成函数，默认调用的是get方法
+                return this.products.reduce((pre,next)=>{
+                        if(!next.isSelected) return pre  //如果当前没被选中，就不进行累加
+                        return pre+next.productPrice*next.porductCount}
+                    ,0)
+            }
+
+        },
+        filters:{//过滤器定义,这里的this是window,
+            toFixed(input,num){//这里的input是|前面的数据,第二个参数是前面传递过来的参数
+                return '¥'+input.toFixed(num)
+            }
+        },
         methods:{
             getData(){//初始化方法
-
                 //console.log(this.products)//可以直接调用data中的数据
                 axios.get('./carts.json').then(res=>{//回调函数中的this是window，所以这里axis中用箭头函数，将this指向到这个实例中
                     console.log(res.data)
                     this.products=res.data
+                    //this.checkOne()//数据获取完成后给checkall赋值
                 },(err)=>{
                     console.log(err)
                 })
-            }
+
+            },
+            remove(p){//p代表当前点击的这一项
+                console.log('delete')
+                console.log(p)
+                this.products=this.products.filter(item=>item!==p)
+            }//,
+            // change(){
+            //     // console.log(this.checkAll)
+            //     //根据当前自己的状态设置其他人的状态，实现全选和全返
+            //     this.products.forEach(item=>item.isSelected=this.checkAll)
+            // },
+            // checkOne(){
+            //     console.log('checkone')
+            //     // 根据下面点击效果实现控制上面全选的结果
+            //     this.checkAll=this.products.every(item=>item.isSelected==true)
+            // },
+            // sum(){
+            //     // 求和
+            //     return this.products.reduce((pre,next)=>{
+            //         if(!next.isSelected) return pre  //如果当前没被选中，就不进行累加
+            //         return pre+next.productPrice*next.porductCount}
+            //     ,0)
+            // }
         },
+
         data:{
-            products:[]
-        },
+            products:[]//,
+            // checkAll:true//是计算出来的放置计算属性
+        }
+
 
     })
 </script>

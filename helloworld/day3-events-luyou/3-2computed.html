@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed</title>
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model.lazy="a">
+    <hr>
+    {{msg}}
+    <!--根据输入框中的内容，算出一个错误信息-->
+
+    <br>
+
+
+</div>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            a:''
+        },
+        computed:{//默认调用get方法，必须要有return，不支持一步
+            msg(){
+                if(this.a.length<3){return '少了'}
+                if(this.a.length>6){return '多了'}
+                return ''
+            }
+        }
+
+
+
+// /**/
+    })
+</script>
+</body>
+</html>
+
+<!--
+ 当给a赋值时影响了错误信息的改变  错误
+computed:{
+a:{//如果写了set方法，并把val给了别人，那当前的a就不会被赋予结果了
+get(){return ''},
+set(val){
+this.msg=val
+}
+}
+},-->

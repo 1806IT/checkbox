@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+</head>
+<body>
+<div id="app">
+    <button v-color="flag">变色</button>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script>
+let app=new Vue({
+    el :'#app',
+    data:{
+        flag:'red'
+    },
+    directives:{
+        color(el,bindings){//el指代的是button按钮
+            console.log(el)
+            console.log(arguments)
+            el.style.background=bindings.value
+        }
+    }
+
+})
+</script>
+</body>
+</html>

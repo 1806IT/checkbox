@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch</title>
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model.lazy="a">
+    <hr>
+    {{msg}}
+</div>
+<div id="app2">
+    <input type="text" v-model="val">{{fullName}}
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script src="../../node_modules/axios/dist/axios.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            a:'',
+            msg:''
+        },
+        watch: {//watch的属性名要和观察者的名字一致,只有值变化的时候才会变化，支持异步,其他情况更倾向使用computed
+            a(newVal, oldVal) {
+                console.log(newVal + '=====' + oldVal)
+                setTimeout(() => {
+                    if (newVal.length < 3) {
+                        return this.msg = '太少'
+                    }
+                    if (newVal.length > 6) {
+                        return this.msg = '太多'
+                    }
+                    this.msg = ''
+                }, 2000)
+            }
+        }
+    })
+    let app2=new Vue({
+        el:'#app2',
+        data: {
+            firstName:'zhang',
+            lastName:'sanfeng',
+            val:''
+        },
+        computed:{
+            fullName(){
+                return this.firstName+'---'+this.val+'----'+this.lastName
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>
+
+<!--
+ 当给a赋值时影响了错误信息的改变  错误
+computed:{
+a:{//如果写了set方法，并把val给了别人，那当前的a就不会被赋予结果了
+get(){return ''},
+set(val){
+this.msg=val
+}
+}
+},-->

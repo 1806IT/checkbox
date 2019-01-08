@@ -9,7 +9,7 @@
 <div id="app">
     <input type="text" v-model="val" @keyup.enter="add">
     <ul>
-        <li v-for="(a,index) in arr">{{a}}<button @click="remove(index)">删除</button></li>
+        <li v-for="(a,index) in arr">{{a}}+"---"+{{index}}<button @click="remove(index)">删除</button></li>
     </ul>
 </div>
 <script src="../node_modules/vue/dist/vue.js"></script>
@@ -22,12 +22,16 @@
         },
         methods:{
             add(e){
+                console.log("add")
                 if(e.keyCode===13){
                     this.arr.unshift(this.val),
                     this.val=''
                 }
             },
-            remove(i){this.arr=this.arr.filter((item,index)=>index!==i)}
+            remove(i){
+                console.log("remove")
+                this.arr=this.arr.filter((item,index)=>index!==i)
+            }
         }
     })
 </script>

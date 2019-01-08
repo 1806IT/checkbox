@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <link rel="stylesheet" href="../../node_modules/animate.css/animate.css">
+    <style>
+        div>div{
+            width:100px;height:100px;background:red;
+            margin: 0 auto;
+        }
+        .sh-enter{
+            opacity: 0;}
+        .sh-enter-active{ transition:2s linear;}
+        .sh-leave-active{ opacity: 0;transition:1s linear;}
+        .if-enter{
+            opacity: 0;}
+        .if-enter-active{ transition:2s linear;}
+        .if-leave-active{ opacity: 0;transition:1s linear;}
+    </style>
+</head>
+<body>
+<div id="app1">
+    <!--v-if操作的是dom, 当数据一开始就确定下来，推荐用v-if,if不通过则其内部指令都不会执行
+    v-show操作的是样式，频繁切换dom用v-show-->
+    <!--只有dom从显示到隐藏，或从隐藏到现实才能使用vue动画-->
+    <button @click="flag=!flag">切换</button>
+    <transition name="sh">  <!-- 要动画就用transition标签包起来-->
+        <div v-show="flag"> i love you</div>
+    </transition>
+    <transition name="if">  <!-- 要动画就用transition标签包起来-->
+        <div v-if="flag"> i love you</div>
+    </transition>
+    <hr>
+</div>
+<div id="app2">
+    <button @click="flag=!flag">切换</button>
+    <transition enter-active-class="animated fadeInRightBig" leave-active-class="animated fadeOUtLeftBig">
+        <div v-show="flag">vue的世界</div>
+    </transition>
+
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm=new Vue({
+        el:"#app1",
+        data:{
+            flag:true
+        },
+        computed:{
+
+        },
+        methods:{
+
+        },
+        filters:{
+
+        }
+    })
+    let app2=new Vue({
+        el:"#app2",
+        data:{
+            flag:true
+        },
+        computed:{
+
+        },
+        methods:{
+
+        },
+        filters:{
+
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue事件</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <div @click="parent">parent
+    <div @click.stop="child">    <!-- 阻止冒泡事件-->
+        child
+        <div @click="grandson">
+            grandson
+        </div>
+    </div>
+        <!--组织默认跳转事件-->
+    <a href="www.qq.com" @click.prevent="parent">去qq</a>
+        <hr>
+        全选 <input type="checkbox" v-model="isSelectedAll"> <br>
+        <input type="checkbox" v-for="product in products" v-model="product.isSelected">
+
+</div>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            producs:[{isSelected:true},{isSelected:true},{isSelected:true}]
+        },
+        computed:{
+
+            isSelectedAll:{
+                get(){
+                    return this.products.every(item=>item.isSelected==true)
+                },
+                set(val){
+                    this.products.forEach(item=>item.isSelected=val)
+                }
+
+            }
+        },
+        methods:{
+            parent(){
+                console.log('parent')
+            },
+            child( ){
+                console.log('child')
+            },
+            grandson(){
+                console.log('grandson')
+            }
+        }
+
+    })
+</script>
+</body>
+</html>
