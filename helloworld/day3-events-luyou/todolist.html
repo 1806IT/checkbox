@@ -33,7 +33,7 @@
                         </div>
                         <div class="panel-body">
                             <ul class="list-group">
-                                <li class="list-group-item" v-for="(todo,index) in filterTodos"  @dblclick="remember(todo)" >
+                                <li class="list-group-i    tem" v-for="(todo,index) in filterTodos"  @dblclick="remember(todo)" >
                                     <!--如果isSelected为true则del生效-->
                                     <!--当点击li是，可以知道点击的是哪一项，如果点击的todo和当前循环的某个相等是，应该显示输入窗-->
                                     <span :class="{del:todo.isSelected}" v-show="cur!==todo">

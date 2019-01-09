@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹框</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .mask{
+            width:100%;
+            height: 100%;
+            position: fixed;
+            background: rgba(0,0,0,0.3);
+            top: 0;
+            left: 0;
+        }
+        .dialog{
+            width: 400px;
+            height: 200px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%,-50%,0);
+            background: #fff;
+        }
+        .red{
+            background: red;
+        }
+        .green{
+            background:green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h5>这是父组件，下面第一个是写死的例子</h5>
+    <test1 aa="1111"></test1>
+    <br>
+    是否使用v-bind的区别，使用会识别输入的类型，不使用会认为是字符串
+    <test1-1 aa="[3,5,7,9]"></test1-1>
+    <test1-1 :aa="[3,5,7,9]"></test1-1>
+    <hr>使用v-bind来进行动态绑定
+    <test2 :msg="parentsmsg"></test2>
+    <input type="text" v-model="parentsmsg">
+    <hr>
+    <test3 msg3="这是父组件组件中的数据"></test3>
+    <hr>
+    input中的数据改变div宽度
+    <input type="text" v-model="widthparent">{{widthparent}}
+    <test4 :width="widthparent"></test4>
+    <hr>
+    <span @click="openchild()">显示</span>
+    <!--//如果show的值是true则显示，否则隐藏 ，@close对应函数是点击关闭按钮时触发的函数-->
+    <modal v-show='flag' :flag="flag" @change="closechild"></modal>
+</div>
+<template id="dialog">
+    <div class="mask">
+        <div class="dialog">
+            <button @click="close">关闭</button>
+        </div>
+    </div>
+</template>
+
+<template id="m1">
+    <div :class="{red:isred}">{{aa}}</div>
+</template>
+
+<template id="m1-1">
+    <div :class="{red:isred}">{{aa.length}}</div>
+</template>
+
+<template id="m2">
+    <div :class="{green:isgreen}">{{msg}}</div>
+</template>
+<template id="m3">
+    <div>{{childmsg}}</div>
+</template>
+<template id="m4">
+    <div :style="stylef">{{width}}</div>
+</template>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let modal={
+        props:['flag'],
+        template:'#dialog',
+        methods:{
+            close(){
+                console.log('要关闭了')
+                this.$emit('change',this.clo)
+
+            }
+        },
+        data:function(){
+            return{
+                clo:false
+            }
+        }
+    }
+    let test1={
+        template: '#m1',
+        props:['aa'],
+        data:function(){
+            return {
+                isred:true
+            }
+        },
+    }
+    let test11={
+            template: '#m1-1',
+            props:['aa'],
+            data:function(){
+                return {
+                    isred:true
+                }
+            },
+        }
+    let test2={
+        template:'#m2',
+        data:function(){
+            return{isgreen:true}
+        },
+        props:["msg"]
+    }
+    let test3={
+        template:'#m3',
+        data:function(){
+            return{
+                isgreen:true,
+                //props中的值可以通过this.xx直接来获取
+                childmsg:this.msg3
+            }
+        },
+        props:["msg3"]
+    }
+    let test4={
+        template:'#m4',
+        props:["width"],
+        data:function(){
+            return{
+                childmsg:this.childmsg
+            }
+        },
+
+        computed:{
+            stylef:function(){
+                return {
+
+                    width:this.width+'px',
+                    background:'yellow',
+                    height:'30px',
+                    color:'blue'
+                }
+            }
+        }
+    }
+    let app1= new Vue({
+        el:'#app',
+        data:{
+            flag:false,
+            msg:'你好，这是父组件内容',
+            parentsmsg:'动态绑定的父组件内容',
+            widthparent:55
+        },
+        components:{
+            modal,
+            test1,
+            test11,
+            test2,
+            test3,
+            test4
+        },
+        methods:{
+            openchild(){
+                console.log('改变子组件显示状态')
+                this.flag=true
+            },
+            closechild(val){
+                console.log('接收到子组件关闭命令')
+                this.flag=val
+            }
+        }
+    })
+</script>
+</body>
+</html>

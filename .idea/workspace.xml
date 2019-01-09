@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="140527eb-370d-49d6-8377-e0142fe37826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/day4/component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day4/emit-on.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day4/normal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day4/lifecyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/day4/lifecyle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day4/model.html" beforeDir="false" afterPath="$PROJECT_DIR$/day4/model.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,49 +19,102 @@
     <favorites_list name="vue-Everest" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day4/lifecyle.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="42" column="6" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="42" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day4/emit-on.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day4/sync.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day4/component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day4/model.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-74">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.73099416">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/day4/lifecyle.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="630">
+                  <caret line="42" column="6" selection-start-line="23" selection-start-column="4" selection-end-line="42" selection-end-column="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/day4/emit-on.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/day4/sync.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/day4/normal.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="99">
+                  <caret line="94" column="19" lean-forward="true" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+                  <folding>
+                    <element signature="n#head#0;n#html#0;n#!!top" />
+                    <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                    <element signature="n#template#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#template#2;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#template#3;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#template#4;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#template#5;n#body#0;n#html#0;n#!!top" />
+                    <element signature="e#2079#2231#0" />
+                    <element signature="e#2247#2433#0" />
+                    <element signature="e#2448#2570#0" />
+                    <element signature="e#2585#2817#0" />
+                    <element signature="e#2903#3345#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="107">
+                  <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1185">
+                  <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="263">
+                  <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1185">
+                  <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -108,11 +159,12 @@
         <option value="$PROJECT_DIR$/helloworld/day3-events-luyou/3-2watch.html" />
         <option value="$PROJECT_DIR$/helloworld/day3-events-luyou/instruct.html" />
         <option value="$PROJECT_DIR$/helloworld/day3-events-luyou/todo.js" />
-        <option value="$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html" />
         <option value="$PROJECT_DIR$/day4/lifecyle.html" />
         <option value="$PROJECT_DIR$/day4/model.html" />
         <option value="$PROJECT_DIR$/day4/component.html" />
         <option value="$PROJECT_DIR$/day4/emit-on.html" />
+        <option value="$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html" />
+        <option value="$PROJECT_DIR$/day4/normal.html" />
       </list>
     </option>
   </component>
@@ -123,10 +175,10 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="509" />
-    <option name="y" value="101" />
-    <option name="width" value="1566" />
-    <option name="height" value="602" />
+    <option name="x" value="390" />
+    <option name="y" value="110" />
+    <option name="width" value="1047" />
+    <option name="height" value="601" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -144,7 +196,13 @@
             <path>
               <item name="vue-Everest" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue-Everest" type="462c0819:PsiDirectoryNode" />
-              <item name="day4" type="462c0819:PsiDirectoryNode" />
+              <item name="helloworld" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue-Everest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-Everest" type="462c0819:PsiDirectoryNode" />
+              <item name="helloworld" type="462c0819:PsiDirectoryNode" />
+              <item name="day3-events-luyou" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -186,17 +244,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.emit-on.html">
+  <component name="RunManager" selected="JavaScript Debug.normal.html">
     <configuration name="component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue-Everest/day4/component.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="emit-on.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue-Everest/day4/emit-on.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="instruct.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue-Everest/helloworld/day3-events-luyou/instruct.html" useBuiltInWebServerPort="true">
+    <configuration name="lifecyle.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue-Everest/day4/lifecyle.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="lifecyle.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue-Everest/day4/lifecyle.html" useBuiltInWebServerPort="true">
+    <configuration name="normal.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue-Everest/day4/normal.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="todolist.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue-Everest/helloworld/day3-events-luyou/todolist.html" useBuiltInWebServerPort="true">
@@ -204,11 +262,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.normal.html" />
         <item itemvalue="JavaScript Debug.emit-on.html" />
         <item itemvalue="JavaScript Debug.component.html" />
         <item itemvalue="JavaScript Debug.lifecyle.html" />
         <item itemvalue="JavaScript Debug.todolist.html" />
-        <item itemvalue="JavaScript Debug.instruct.html" />
       </list>
     </recent_temporary>
   </component>
@@ -231,20 +289,23 @@
       <workItem from="1546809097405" duration="16174000" />
       <workItem from="1546842083119" duration="17034000" />
       <workItem from="1546868966539" duration="1801000" />
-      <workItem from="1546908399722" duration="15121000" />
+      <workItem from="1546908399722" duration="20024000" />
+      <workItem from="1546981524203" duration="6998000" />
+      <workItem from="1546993110012" duration="6200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80550000" />
+    <option name="totallyTimeSpent" value="98651000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="509" y="101" width="1566" height="602" extended-state="0" />
+    <frame x="819" y="360" width="1047" height="601" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5072046" side_tool="true" weight="0.24887556" />
       <window_info id="Structure" order="1" sideWeight="0.5072046" side_tool="true" weight="0.24887556" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49279538" visible="true" weight="0.2485437" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.26862746" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49279538" weight="0.24853802" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.2691552" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3288201" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -302,6 +363,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/day4/normal.html</url>
+          <line>108</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/vue/dist/vue.js">
@@ -461,50 +534,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day4/lifecyle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="42" column="6" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="42" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day4/model.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
+        <state relative-caret-position="60">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day4/component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="190">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/lifecyle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="6" selection-start-line="23" selection-start-column="4" selection-end-line="42" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day4/emit-on.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="375">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day4/sync.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloworld/day3-events-luyou/todolist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day4/normal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="94" column="19" lean-forward="true" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#template#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#template#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#template#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#template#4;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#template#5;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#2079#2231#0" />
+            <element signature="e#2247#2433#0" />
+            <element signature="e#2448#2570#0" />
+            <element signature="e#2585#2817#0" />
+            <element signature="e#2903#3345#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
