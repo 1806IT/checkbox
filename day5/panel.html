@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模版</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+    <panel type="primary" @say-title="parent">
+        <div slot ="title">这是一篇vue的使用</div>
+        <div slot="content">
+            内容区
+            <p>组件的属性传递</p>
+            <p>slot的用法</p>
+            <p>ref的使用</p>
+            <p>nextTick的用法</p>
+        </div>
+        <div>作者：hello</div>
+    </panel>
+</div>
+<template id="panel">
+    <div class="panel" :class="[color]">
+        <div class="panel-heading" ref="head">
+            <slot name="title"></slot>
+        </div>
+        <div class="panel-body">
+            <slot name="content"></slot>
+        </div>
+        <div class="panel-footer">
+            <slot>匿名</slot>
+            <button @click="say">点我说标题</button>
+        </div>
+    </div>
+</template>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let panel={
+        template:'#panel',
+        computed:{
+            color(){
+                return 'panel-'+this.type
+            }
+        },
+        props:{
+            type:{
+                type:[String],
+                default:'default'
+            }
+        },
+        data(){
+            return {red:true}
+        },
+        methods:{
+            say(){
+                this.$emit("say-title",this.$refs.head.innerText)
+            }
+        }
+    }
+    let app1= new Vue({
+        el:'#app',
+        data:{
+
+        },
+        components:{
+            panel
+        },
+        methods:{
+            parent(tit){
+                console.log(tit)
+            }
+        }
+    })
+</script>
+</body>
+</html>

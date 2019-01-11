@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slots</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <modal></modal>
+</div>
+<template id="modal">
+    <!--模版中只能有一个跟元素,可以通过元素属性定制模版-->
+    slot中可以放置一些默认的内容，如果传递了内容则替换掉
+    <div>
+        <slot></slot>
+    </div>
+</template>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let modal={
+        template:'#modal'
+    }
+    let app1= new Vue({
+        el:'#app',
+        data:{
+
+        },
+        components:{
+            modal
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由嵌套</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+<!--编程式导航，在js中跳转页面-->
+<div id="app">
+    <!--router-view是一个全局组件，可以全局使用-->
+
+    <router-link :to="{path:'/home'}">首页</router-link>   <!--推荐该种写法-->
+    <router-link to="/list">列表页</router-link>
+    <router-view></router-view>
+</div>
+
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home={
+        template:'<div>首页 <button @click="toList">去列表</button></div>',
+        methods:{
+            toList(){
+                //this.$router.push('/list')//强制跳转路径，
+                this.$router.replace('/list')//路由替换，将当前的历史替换掉，就没有保留历史了
+                
+            }
+        }
+    }
+    let list={
+        template:'<div>列表页 <button @click="backHome">返回首页</button></div>',
+        methods:{
+            backHome(){
+                this.$router.go(-1)  //返回某一级
+            }
+        }
+    }
+    let routes=[//路由的映射表，配置路径和组件的关系
+        {path:'',component:home},//默认展示的路由
+        {path:'/home',component:home},//配置的关系就是页面级组件
+        {path:'/list',component:list}, //路径必须加/
+        //{path:'*',component:home}//这个地方路径不会变，只是切换了组件而已
+        {path:'*',redirect:'/home'}//路径变，组件也要切换,redirect重定向，404的时候就重定向到home
+    ]
+    let router=new VueRouter({//引入vue-router自带VUErouter类
+        routes,
+
+    })
+    let app1= new Vue({
+        el:'#app',
+        router//每个组件都会拥有一个名字叫做$router的方法（有r的是方法），和一个叫$route的属性（没有r的是属性）
+    })
+</script>
+</body>
+</html>

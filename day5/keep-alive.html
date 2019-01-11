@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keep-alive</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <input type="radio" v-model="radio" value="home">home
+    <input type="radio" v-model="radio" value="list">list
+    <!--keep-alive使组件不被销毁，减少渲染 ，一般用作缓存：为的是后面的路由做准备，如果缓存了就不会再走created
+    mounted钩子函数-->
+    <keep-alive>
+        <component :is="radio"></component>
+    </keep-alive>
+
+    <hr>
+    {{radio}}
+</div>
+
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let home={
+        template:'<div>home</div>'
+    }
+    let list={
+        template:'<div>list</div>'
+    }
+    let app1= new Vue({
+        el:'#app',
+        data:{
+            radio:'home'
+        },
+        components:{
+            home,list
+        }
+    })
+</script>
+</body>
+</html>

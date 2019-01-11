@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模版</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        /*.router-link-active{
+            color:blue;
+                }*/
+        .active{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--router-view是一个全局组件，可以全局使用-->
+    <router-link to="/home" tag="button">首页</router-link>
+    <router-link to="/list" tag="button">列表页</router-link>
+    <router-view></router-view>
+</div>
+
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home={
+        template:'<div>首页</div>'
+    }
+    let list={
+        template:'<div>列表页</div>'
+    }
+    let routes=[//路由的映射表，配置路径和组件的关系
+        {path:'/home',component:home},//配置的关系就是页面级组件
+        {path:'/list',component:list}//路径必须加/
+    ]
+    let router=new VueRouter({//引入vue-router自带VUErouter类
+        //mode:'history',//h5模式，router为hash模式,默认模式为hash模式，开发时一般不用
+        routes,
+        linkActiveClass:'active'//更改默认的类名,默认叫router-link-active
+    })
+    let app1= new Vue({
+        el:'#app',
+        router
+    })
+</script>
+</body>
+</html>
